@@ -10,6 +10,7 @@ import Add from "./pages/add/Add";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import "./App.scss";
 
 function App() {
   const Layout = () => {

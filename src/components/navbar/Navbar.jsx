@@ -28,17 +28,25 @@ const Navbar = () => {
     <div className={active ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
-          {/* <Link to="/"> */}
-          <span className="text">fiverr</span>
-          {/* </Link> */}
+          <Link to="/" className="link">
+            <span className="text">fiverr</span>
+          </Link>
           <span className="dot">.</span>
         </div>
         <div className="links">
-          <span>Fiverr Business</span>
-          <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
-          <span>Sign in</span>
+          <Link to="" className="link">
+            Fiverr Business
+          </Link>
+          <Link to="" className="link">
+            Explore
+          </Link>
+          <Link to="" className="link">
+            English
+          </Link>
+          {!currentUser?.isSeller && <Link>Become a Seller</Link>}
+          <Link to="" className="link">
+            Sign in
+          </Link>
           {!currentUser && <button>Join</button>}
           {currentUser && (
             <div className="user" onClick={() => setOpen(!open)}>
@@ -51,13 +59,23 @@ const Navbar = () => {
                 <div className="options">
                   {currentUser?.isSeller && (
                     <>
-                      <span>Gigs</span>
-                      <span>Add New Gig</span>
+                      <Link to="/gigs" className="link">
+                        Gigs
+                      </Link>
+                      <Link to="/add" className="link">
+                        Add New Gig
+                      </Link>
                     </>
                   )}
-                  <span>Orders</span>
-                  <span>Messages</span>
-                  <span>Logout</span>
+                  <Link to="/orders" className="link">
+                    Orders
+                  </Link>
+                  <Link to="/messages" className="link">
+                    Messages
+                  </Link>
+                  <Link to="/" className="link">
+                    Logout
+                  </Link>
                 </div>
               )}
             </div>
